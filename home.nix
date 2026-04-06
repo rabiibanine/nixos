@@ -8,6 +8,14 @@
 
   programs.vscode = {
     enable = true;
+    extensions = with pkgs.vscode-extensions; [
+      jdinhlife.gruvbox
+    ];
+    usersettings = {
+      "workbench.colorTheme" = "Gruvbox Dark Hard";
+      "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
+      "editor.fontLigatures" = true;
+    };
   };
 
   programs.firefox = {
@@ -19,6 +27,9 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+    plugins = with pkgs.vimPlugins; [
+      gruvbox-nvim
+    ];
 
     extraLuaConfig = ''
       vim.g.mapleader = " "
@@ -33,11 +44,16 @@
       vim.opt.relativenumber = true;
       vim.opt.shiftwidth = 2;
       vim.opt.expandtab = true;
+
+      -- Theme
+      vim.o.background = "dark"
+      vim.cmd([[colorscheme gruvbox]])
     '';
     };  
 
   programs.kitty = {
     enable = true;
+    theme = "Gruvbox Dark Hard";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 16;
