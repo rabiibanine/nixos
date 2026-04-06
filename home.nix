@@ -34,7 +34,7 @@
       vim.opt.shiftwidth = 2;
       vim.opt.expandtab = true;
     '';
-      
+    };  
 
   home.packages = [
     pkgs.jetbrains.idea-ultimate
