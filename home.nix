@@ -11,7 +11,7 @@
     extensions = with pkgs.vscode-extensions; [
       jdinhlife.gruvbox
     ];
-    usersettings = {
+    userSettings = {
       "workbench.colorTheme" = "Gruvbox Dark Hard";
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
       "editor.fontLigatures" = true;
