@@ -46,7 +46,7 @@
           install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
           installation_mode = "force_installed";
         };
-
+      };
     };
   };
 
@@ -125,6 +125,8 @@
 
     cleanup = "sudo nix-collect-garbage -d";
     update = "nix flake update ~/your-flake-folder";
+    edit-home = "nvim ~/.config/nixos/home.nix";
+    edit-config = "nvim ~/.config/nixos/configuration.nix";
 
     # --- MODERN CLI SWAPS ---
 
