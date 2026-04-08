@@ -117,6 +117,11 @@
     disable-user-extensions = false;
     enabled-extensions = [ "blur-my-shell@aunetx" ];
 
+    "org/gnome/shell/extensions/blur-my-shell/applications" = {
+
+      blur = true;
+      whitelist = [ "kitty" ];
+
     };
 
   };
