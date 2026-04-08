@@ -184,6 +184,7 @@
 
       blur = true;
       whitelist = [ "kitty" ];
+      unblur = false;
 
     };
 
