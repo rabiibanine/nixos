@@ -75,6 +75,7 @@
     pkgs.bat
     pkgs.jq
     pkgs.btop
+    pkgs.fastfetch
   ];
 
   home.file.".ideavimrc".text = ''
