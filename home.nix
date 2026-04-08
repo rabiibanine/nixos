@@ -59,6 +59,7 @@
       size = 16;
     };
     settings = {
+      hide_window_decorations = "yes";
       scrollback_lines = 10000;
       enable_audio_bell = true;
       update_check_interval = 0;
