@@ -83,7 +83,7 @@
 
     # GNOME Apps & Tools
     pkgs.gnomeExtensions.blur-my-shell
-    dconf-editor
+    pkgs.dconf-editor
 
   ];
 
