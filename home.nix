@@ -90,23 +90,18 @@
 
   home.shellAliases = {
     # --- THE SYSTEM REBUILD ALIAS ---
-    # Replace '~/your-flake-folder' with the actual path to your system config
-    switch = "sudo nixos-rebuild switch --flake ~/your-flake-folder";
+
+    switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
 
     # --- SYSTEM MAINTENANCE ---
-    # The garbage collection command we talked about
+
     cleanup = "sudo nix-collect-garbage -d";
-    # A quick way to update your flake inputs (like fetching newer package versions)
     update = "nix flake update ~/your-flake-folder";
 
     # --- MODERN CLI SWAPS ---
-    # This tricks your brain into using the new, faster tools without having to unlearn muscle memory
-    cat = "bat";
-    grep = "rg";
-    find = "fd";
 
     # --- FILE NAVIGATION ALIASES ---
-    # Standard shortcuts to save you keystrokes
+
     ".." = "cd ..";
     "..." = "cd ../..";
     ll = "ls -la";
