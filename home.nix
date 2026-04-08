@@ -6,6 +6,11 @@
 
   programs.home-manager.enable = true;
 
+  programs.bash = {
+    enable = true;
+    enableCompletion = true;
+  };
+
   programs.vscode = {
     enable = true;
     profiles.default.extensions = with pkgs.vscode-extensions; [
