@@ -24,7 +24,7 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.pizzakat = import ./home.nix;
-	    networking.hostname = "pizzahub";
+	    networking.hostName = "pizzahub";
 	  }
         ];
       };
@@ -38,7 +38,7 @@
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.pizzakat = import ./home.nix;
-	    networking.hostname = "pizzahub-vm";
+	    networking.hostName = "pizzahub-vm";
 	  }
         ];
       };
