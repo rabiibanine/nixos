@@ -33,7 +33,12 @@
       isDefault = true;
 
       settings = {
+        "browser.aboutwelcome.enabled" = false;
+        "browser.startup.homepage_override.mstone" = "ignore";
 
+        "sidebar.revamp" = true;
+        "sidebar.verticalTabs" = true;
+        "sidebar.visibility" = "always-show";
       };
 
     };
@@ -166,15 +171,19 @@
 
     "org/gnome/shell" = {
 
-    disable-user-extensions = false;
-    enabled-extensions = [ "blur-my-shell@aunetx" ];
+      disable-user-extensions = false;
+      enabled-extensions = [ "blur-my-shell@aunetx" ];
+      favorite-apps = [
+        "firefox.desktop",
+        "kitty.desktop",
+      ];
 
     };
 
     "org/gnome/shell/extensions/blur-my-shell/applications" = {
 
       blur = true;
-      whitelist = [ "kitty" "Kitty" ];
+      whitelist = [ "kitty" ];
 
     };
 
