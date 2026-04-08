@@ -8,10 +8,10 @@
 
   programs.vscode = {
     enable = true;
-    extensions = with pkgs.vscode-extensions; [
+    profiles.default.extensions = with pkgs.vscode-extensions; [
       jdinhlife.gruvbox
     ];
-    userSettings = {
+    profiles.default.userSettings = {
       "workbench.colorTheme" = "Gruvbox Dark Hard";
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
       "editor.fontLigatures" = true;
@@ -68,12 +68,13 @@
   };
 
   home.packages = [
-    pkgs.jetbrains.idea-ultimate
+    pkgs.jetbrains.idea
     pkgs.zip
     pkgs.unzip
     pkgs.ripgrep
     pkgs.bat
     pkgs.jq
+    pkgs.btop
   ];
 
   home.file.".ideavimrc".text = ''
