@@ -174,8 +174,8 @@
       disable-user-extensions = false;
       enabled-extensions = [ "blur-my-shell@aunetx" ];
       favorite-apps = [
-        "firefox.desktop",
-        "kitty.desktop",
+        "firefox.desktop"
+        "kitty.desktop"
       ];
 
     };
