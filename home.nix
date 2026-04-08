@@ -124,7 +124,8 @@
     # --- SYSTEM MAINTENANCE ---
 
     cleanup = "sudo nix-collect-garbage -d";
-    update = "nix flake update ~/your-flake-folder";
+    update = "nix flake update ~/.config/nixos/";
+    conf = "cd ~/.config/nixos/";
     "edit-home" = "nvim ~/.config/nixos/home.nix";
     "edit-config" = "nvim ~/.config/nixos/configuration.nix";
 
