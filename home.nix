@@ -68,7 +68,11 @@
   };
 
   home.packages = [
+
+    # Applications
     pkgs.jetbrains.idea
+
+    # Tools
     pkgs.zip
     pkgs.unzip
     pkgs.ripgrep
@@ -76,6 +80,11 @@
     pkgs.jq
     pkgs.btop
     pkgs.fastfetch
+
+    # GNOME Apps & Tools
+    pkgs.gnomeExtensions.blur-my-shell
+    dconf-editor
+
   ];
 
   home.file.".ideavimrc".text = ''
@@ -100,5 +109,16 @@
     set ignorecase
     set smartcase
   '';
+
+  dconf.settings = {
+
+    "org/gnome/shell" = {
+
+    disable-user-extensions = false;
+    enabled-extensions = [ "blur-my-shell@aunetx" ];
+
+    };
+
+  };
 
 }
