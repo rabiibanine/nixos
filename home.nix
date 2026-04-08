@@ -69,6 +69,11 @@
 
   home.packages = [
     pkgs.jetbrains.idea-ultimate
+    pkgs.zip
+    pkgs.unzip
+    pkgs.ripgrep
+    pkgs.bat
+    pkgs.jq
   ];
 
   home.file.".ideavimrc".text = ''
