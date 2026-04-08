@@ -53,7 +53,7 @@
 
   programs.kitty = {
     enable = true;
-    themeFile = "Gruvbox Dark";
+    themeFile = "gruvbox-dark";
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 16;
