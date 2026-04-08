@@ -126,6 +126,7 @@
     cleanup = "sudo nix-collect-garbage -d";
     update = "nix flake update ~/.config/nixos/";
     conf = "cd ~/.config/nixos/";
+    home = "cd ~";
     "edit-home" = "nvim ~/.config/nixos/home.nix";
     "edit-config" = "nvim ~/.config/nixos/configuration.nix";
 
