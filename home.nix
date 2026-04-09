@@ -6,7 +6,6 @@
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
-  programs.starship.enable = true;
 
   programs.zsh = {
     enable = true;
@@ -14,6 +13,15 @@
 
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+  };
+
+  programs.starship = {
+    enable = true;
+
+    settings = {
+      username.show-always = true;
+      hostname.ssh-only = false;
+    };
   };
 
   programs.direnv = {
