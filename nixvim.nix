@@ -25,11 +25,25 @@
       { mode = "n"; key = "<leader>q"; action = ":q<CR>"; }
     ];
 
-    plugins.lualine = {
-      enable = true;
-      settings = {
-        options = { icons_enabled = true; };
+    plugins = {
+
+      lualine = {
+        enable = true;
+        settings = {
+          options = { icons_enabled = true; };
+        };
       };
+
+      telescope = {
+        enable = true;
+        keymaps = {
+          "<leader>ff" = "find_files";
+          "<leader>fg" = "live_grep";
+          "<leader>fb" = "buffers";
+        };
+      };
+
     };
+
   };
 }
