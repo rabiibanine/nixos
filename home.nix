@@ -114,6 +114,7 @@
     jq
     btop
     fastfetch
+    wl-clipboard
 
     # GNOME Apps & Tools
     gnomeExtensions.blur-my-shell
