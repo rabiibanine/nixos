@@ -27,4 +27,8 @@
     ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+
+  virtualisation.vmware.guest.enable = true;
+
+  hardware.graphics.enable = true;
 }
