@@ -50,6 +50,11 @@
         key = "<leader>q";
         action = ":q<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>Neotree toggle<CR>";
+      }
     ];
 
     plugins = {
@@ -182,6 +187,15 @@
           # at the end of the specific line your cursor is currently on.
           current_line_blame = true;
         };
+      };
+
+      neo-tree = {
+        enable = true;
+
+        # Highly recommended default:
+        # If Neo-tree is the last window open, close Neovim instead of hanging.
+        closeIfLastWindow = true;
+
       };
 
     };
