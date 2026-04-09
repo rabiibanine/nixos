@@ -1,4 +1,5 @@
-{ pkgs, ... } : {
+{ pkgs, ... }:
+{
 
   home.username = "pizzakat";
   home.homeDirectory = "/home/pizzakat";
@@ -76,6 +77,7 @@
 
     # Applications
     jetbrains.idea
+    zathura
 
     # Tools
     zip
