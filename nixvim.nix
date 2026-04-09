@@ -28,6 +28,7 @@
     plugins = {
 
       web-devicons.enable = true;
+      luasnip.enabe = true;
 
       lualine = {
         enable = true;
@@ -92,6 +93,28 @@
             "K"  = "hover";              # Show documentation/types (Shift+k)
             "<leader>rn" = "rename";     # Rename variable across entire project
             "<leader>ca" = "code_action";# Auto-fix/Code actions
+          };
+        };
+      };
+
+      cmp = {
+        enable = true;
+        settings = {
+          # Where to pull suggestions from (Order matters! Top is highest priority)
+          sources = [
+            { name = "nvim_lsp"; } 
+            { name = "luasnip"; }  
+            { name = "buffer"; }   
+            { name = "path"; }     
+          ];
+
+          # Keybindings for navigating the dropdown menu
+          mapping = {
+            "<C-Space>" = "cmp.mapping.complete()"; # Manually trigger the menu (Ctrl+Space)
+            "<C-e>" = "cmp.mapping.abort()";        # Close the menu without choosing
+            "<CR>" = "cmp.mapping.confirm({ select = true })"; # Enter to select
+            "<Tab>" = "cmp.mapping.select_next_item()";   # Go down the list
+            "<S-Tab>" = "cmp.mapping.select_prev_item()"; # Go up the list (Shift+Tab)
           };
         };
       };
