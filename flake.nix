@@ -30,6 +30,8 @@
         modules = [
           ./configuration.nix
           ./laptop-hardware.nix
+          ./nixvim.nix
+          nixvim.nixosModules.nixvim
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager.useGlobalPkgs = true;
@@ -37,8 +39,6 @@
 	    home-manager.users.pizzakat = import ./home.nix;
 	    networking.hostName = "pizzahub";
 	  }
-          nixvim.nixosModules.nixvim
-          { nixvim.users.pizzakat = import ./nixvim.nix; }
         ];
       };
 
@@ -47,6 +47,8 @@
         modules = [
           ./configuration.nix
           ./vm-hardware.nix
+          ./nixvim.nix
+          nixvim.nixosModules.nixvim
 	  home-manager.nixosModules.home-manager
 	  {
 	    home-manager.useGlobalPkgs = true;
@@ -54,8 +56,6 @@
 	    home-manager.users.pizzakat = import ./home.nix;
 	    networking.hostName = "pizzahub-vm";
 	  }
-          nixvim.nixosModules.nixvim
-          { nixvim.users.pizzakat = import ./nixvim.nix; }
         ];
       };
     };
