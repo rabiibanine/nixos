@@ -56,6 +56,11 @@
         key = "<leader>e";
         action = "<cmd>Neotree toggle<CR>";
       }
+      {
+        mode = "n";
+        key = "<leader>gb"; # "gb" for Git Blame
+        action = "<cmd>Gitsigns blame_line<CR>";
+      }
     ];
 
     plugins = {
@@ -199,7 +204,7 @@
 
         # Highly recommended default:
         # If Neo-tree is the last window open, close Neovim instead of hanging.
-        close_if_last_window = true;
+        closeIfLastWindows = true;
 
       };
 
