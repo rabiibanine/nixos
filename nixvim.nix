@@ -151,6 +151,17 @@
         };
       };
 
+      gitsigns = {
+        enable = true;
+        
+        settings = {
+          # OPTIONAL BUT AWESOME: Turns on virtual inline git blame
+          # It shows a faded "You, 2 hours ago • Added express route" 
+          # at the end of the specific line your cursor is currently on.
+          current_line_blame = true; 
+        };
+      };
+
     };
 
   };
