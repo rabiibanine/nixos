@@ -62,14 +62,14 @@
         action = "<cmd>Gitsigns blame_line<CR>";
       }
       {
-        mode = "n";
-        key = "<C-t>"; # Ctrl + t to toggle terminal
-        action = "<cmd>ToggleTerm<CR>";
-      }
-      {
         mode = "t";
         key = "<Esc>";
         action = "<C-\\><C-n>";
+      }
+      {
+        mode = "n";
+        key = "<leader>tl"; # Space + t + l (Terminal List)
+        action = "<cmd>TermSelect<CR>";
       }
     ];
 
@@ -93,6 +93,9 @@
           "<leader>ff" = "find_files";
           "<leader>fg" = "live_grep";
           "<leader>fb" = "buffers";
+        };
+        extensions = {
+          ui-select.enable = true;
         };
       };
 
@@ -201,6 +204,8 @@
       toggleterm = {
         enable = true;
         settings = {
+          # Set Ctrl+t as the default keymap to open floating terminals
+          open_mapping = "[[<C-t>]]";
           direction = "float"; # Makes it pop up in the middle of the screen
           float_opts = {
             border = "curved";
