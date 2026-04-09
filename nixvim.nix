@@ -24,5 +24,12 @@
       { mode = "n"; key = "<leader>w"; action = ":w<CR>"; }
       { mode = "n"; key = "<leader>q"; action = ":q<CR>"; }
     ];
+
+    plugins.lualine = {
+      enable = true;
+      settings = {
+        options = { icons_enabled = true; };
+      };
+    };
   };
 }
