@@ -19,8 +19,8 @@
     enable = true;
 
     settings = {
-      username.show-always = true;
-      hostname.ssh-only = false;
+      username.show_always = true;
+      hostname.ssh_only = false;
     };
   };
 
