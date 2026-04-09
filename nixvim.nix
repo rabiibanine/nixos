@@ -1,4 +1,5 @@
-{ config, pkgs, ... } : {
+{ pkgs, ... }:
+{
 
   programs.nixvim = {
 
@@ -16,7 +17,9 @@
 
     colorschemes.gruvbox.enable = true;
 
-    globals = { mapleader = " "; };
+    globals = {
+      mapleader = " ";
+    };
 
     opts = {
       number = true;
@@ -27,10 +30,26 @@
     };
 
     keymaps = [
-      { mode = "i"; key = "jk"; action = "<ESC>"; }
-      { mode = "i"; key = "kj"; action = "<ESC>"; }
-      { mode = "n"; key = "<leader>w"; action = ":w<CR>"; }
-      { mode = "n"; key = "<leader>q"; action = ":q<CR>"; }
+      {
+        mode = "i";
+        key = "jk";
+        action = "<ESC>";
+      }
+      {
+        mode = "i";
+        key = "kj";
+        action = "<ESC>";
+      }
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = ":w<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>q";
+        action = ":q<CR>";
+      }
     ];
 
     plugins = {
@@ -41,7 +60,9 @@
       lualine = {
         enable = true;
         settings = {
-          options = { icons_enabled = true; };
+          options = {
+            icons_enabled = true;
+          };
         };
       };
 
@@ -55,7 +76,7 @@
       };
 
       treesitter = {
-        enable = true; 
+        enable = true;
         settings = {
           highlight.enable = true;
           indent.enable = true;
@@ -63,7 +84,7 @@
       };
 
       nvim-autopairs = {
-        enable = true; 
+        enable = true;
       };
 
       lsp = {
@@ -96,11 +117,11 @@
 
           # Buffer keymaps (actions you take on the code itself)
           lspBuf = {
-            "gd" = "definition";         # Go to definition
-            "gr" = "references";         # Find all references
-            "K"  = "hover";              # Show documentation/types (Shift+k)
-            "<leader>rn" = "rename";     # Rename variable across entire project
-            "<leader>ca" = "code_action";# Auto-fix/Code actions
+            "gd" = "definition"; # Go to definition
+            "gr" = "references"; # Find all references
+            "K" = "hover"; # Show documentation/types (Shift+k)
+            "<leader>rn" = "rename"; # Rename variable across entire project
+            "<leader>ca" = "code_action"; # Auto-fix/Code actions
           };
         };
       };
@@ -110,18 +131,18 @@
         settings = {
           # Where to pull suggestions from (Order matters! Top is highest priority)
           sources = [
-            { name = "nvim_lsp"; } 
-            { name = "luasnip"; }  
-            { name = "buffer"; }   
-            { name = "path"; }     
+            { name = "nvim_lsp"; }
+            { name = "luasnip"; }
+            { name = "buffer"; }
+            { name = "path"; }
           ];
 
           # Keybindings for navigating the dropdown menu
           mapping = {
             "<C-Space>" = "cmp.mapping.complete()"; # Manually trigger the menu (Ctrl+Space)
-            "<C-e>" = "cmp.mapping.abort()";        # Close the menu without choosing
+            "<C-e>" = "cmp.mapping.abort()"; # Close the menu without choosing
             "<CR>" = "cmp.mapping.confirm({ select = true })"; # Enter to select
-            "<Tab>" = "cmp.mapping.select_next_item()";   # Go down the list
+            "<Tab>" = "cmp.mapping.select_next_item()"; # Go down the list
             "<S-Tab>" = "cmp.mapping.select_prev_item()"; # Go up the list (Shift+Tab)
           };
         };
@@ -137,7 +158,7 @@
             html = [ "prettier" ];
             json = [ "prettier" ];
 
-            nix = [ "nixfmt" ]; 
+            nix = [ "nixfmt" ];
             python = [ "black" ];
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
@@ -146,7 +167,7 @@
 
           format_on_save = {
             # If a specific formatter isn't found, use the LSP's basic formatter
-            lsp_fallback = true; 
+            lsp_fallback = true;
             timeout_ms = 500;
           };
         };
@@ -154,12 +175,12 @@
 
       gitsigns = {
         enable = true;
-        
+
         settings = {
           # OPTIONAL BUT AWESOME: Turns on virtual inline git blame
-          # It shows a faded "You, 2 hours ago • Added express route" 
+          # It shows a faded "You, 2 hours ago • Added express route"
           # at the end of the specific line your cursor is currently on.
-          current_line_blame = true; 
+          current_line_blame = true;
         };
       };
 
