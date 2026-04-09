@@ -61,6 +61,16 @@
         key = "<leader>gb"; # "gb" for Git Blame
         action = "<cmd>Gitsigns blame_line<CR>";
       }
+      {
+        mode = "n";
+        key = "<C-t>"; # Ctrl + t to toggle terminal
+        action = "<cmd>ToggleTerm<CR>";
+      }
+      {
+        mode = "t";
+        key = "<Esc>";
+        action = "<C-\\><C-n>";
+      }
     ];
 
     plugins = {
@@ -184,6 +194,16 @@
             # If a specific formatter isn't found, use the LSP's basic formatter
             lsp_fallback = true;
             timeout_ms = 500;
+          };
+        };
+      };
+
+      toggleterm = {
+        enable = true;
+        settings = {
+          direction = "float"; # Makes it pop up in the middle of the screen
+          float_opts = {
+            border = "curved";
           };
         };
       };
