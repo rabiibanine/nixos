@@ -7,9 +7,12 @@
 
   programs.home-manager.enable = true;
 
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
+
+    autoSuggestion.enable = true;
+    syntaxHighlighting.enable = true;
   };
 
   programs.direnv = {
