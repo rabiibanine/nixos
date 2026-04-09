@@ -189,6 +189,7 @@
       blur = true;
       whitelist = [ "kitty" ];
       unblur = false;
+      brightness = 0.6;
 
     };
 
