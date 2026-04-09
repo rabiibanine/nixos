@@ -1,4 +1,5 @@
 {
+
   description = "My NixOS flakes configuration";
 
   inputs = {
@@ -36,6 +37,8 @@
 	    home-manager.users.pizzakat = import ./home.nix;
 	    networking.hostName = "pizzahub";
 	  }
+          nixvim.nixosModules.nixvim
+          { nixvim.users.pizzakat = import ./nixvim.nix; }
         ];
       };
 
@@ -51,6 +54,8 @@
 	    home-manager.users.pizzakat = import ./home.nix;
 	    networking.hostName = "pizzahub-vm";
 	  }
+          nixvim.nixosModules.nixvim
+          { nixvim.users.pizzakat = import ./nixvim.nix; }
         ];
       };
     };

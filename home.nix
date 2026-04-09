@@ -1,8 +1,4 @@
-{ config, pkgs, inputs, ... } : {
-
-  imports = [
-    inputs.nixvim.homeManagerModules.nixvim
-  ];
+{ pkgs, ... } : {
 
   home.username = "pizzakat";
   home.homeDirectory = "/home/pizzakat";
@@ -57,54 +53,6 @@
         };
       };
     };
-  };
-
-  programs.nixvim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-
-    # Theme
-    colorschemes.gruvbox.enable = true;
-
-    # Global variables (vim.g)
-    globals = {
-      mapleader = " ";
-    };
-
-    # Standard options (vim.opt / vim.o)
-    opts = {
-      number = true;
-      relativenumber = true;
-      shiftwidth = 2;
-      expandtab = true;
-      background = "dark";
-    };
-
-    # Keybindings (vim.keymap.set)
-    keymaps = [
-      {
-        mode = "i";
-        key = "jk";
-        action = "<ESC>";
-      }
-      {
-        mode = "i";
-        key = "kj";
-        action = "<ESC>";
-      }
-      {
-        mode = "n";
-        key = "<leader>w";
-        action = ":w<CR>";
-      }
-      {
-        mode = "n";
-        key = "<leader>q";
-        action = ":q<CR>";
-      }
-    ];
   };
 
   programs.kitty = {
