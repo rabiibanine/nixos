@@ -6,12 +6,13 @@
   home.stateVersion = "25.11";
 
   programs.home-manager.enable = true;
+  programs.starship.enable = true;
 
   programs.zsh = {
     enable = true;
     enableCompletion = true;
 
-    autosuggestions.enable = true;
+    autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
   };
 
