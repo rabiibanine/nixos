@@ -11,7 +11,7 @@
     enable = true;
     enableCompletion = true;
 
-    autoSuggestion.enable = true;
+    autosuggestions.enable = true;
     syntaxHighlighting.enable = true;
   };
 
