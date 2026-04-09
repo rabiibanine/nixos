@@ -1,5 +1,12 @@
 { config, pkgs, ... } : {
 
+  extraPackages = with pkgs; [
+    nixfmt-rfc-style
+    black
+    clang-tools
+    google-java-format
+  ];
+
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
@@ -115,6 +122,31 @@
             "<CR>" = "cmp.mapping.confirm({ select = true })"; # Enter to select
             "<Tab>" = "cmp.mapping.select_next_item()";   # Go down the list
             "<S-Tab>" = "cmp.mapping.select_prev_item()"; # Go up the list (Shift+Tab)
+          };
+        };
+      };
+
+      conform-nvim = {
+        enable = true;
+        settings = {
+          formatters_by_ft = {
+            javascript = [ "prettier" ];
+            typescript = [ "prettier" ];
+            css = [ "prettier" ];
+            html = [ "prettier" ];
+            json = [ "prettier" ];
+
+            nix = [ "nixfmt" ]; 
+            python = [ "black" ];
+            c = [ "clang-format" ];
+            cpp = [ "clang-format" ];
+            java = [ "google-java-format" ];
+          };
+
+          format_on_save = {
+            # If a specific formatter isn't found, use the LSP's basic formatter
+            lsp_fallback = true; 
+            timeout_ms = 500;
           };
         };
       };
