@@ -204,7 +204,9 @@
 
         # Highly recommended default:
         # If Neo-tree is the last window open, close Neovim instead of hanging.
-        closeIfLastWindows = true;
+        settings = {
+          closeIfLastWindows = true;
+        };
 
       };
 
