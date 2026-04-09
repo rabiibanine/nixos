@@ -18,7 +18,10 @@
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Fonts
-  fonts.packages = with pkgs; [ nerd-fonts.jetbrains-mono ];
+  fonts.packages = with pkgs; [
+    nerd-fonts.jetbrains-mono
+    libertine
+  ];
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -80,7 +83,10 @@
   users.users.pizzakat = {
     isNormalUser = true;
     description = "rabii";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
     ];
   };
@@ -91,7 +97,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    vim 
+    vim
     wget
     git
   ];
@@ -124,6 +130,9 @@
   system.stateVersion = "25.11"; # Did you read the comment?
 
   # Enable experimental features, namely flakes and nix-command
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
 }
