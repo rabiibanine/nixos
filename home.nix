@@ -101,23 +101,24 @@
     };
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
 
     # Applications
-    pkgs.jetbrains.idea
+    jetbrains.idea
 
     # Tools
-    pkgs.zip
-    pkgs.unzip
-    pkgs.ripgrep
-    pkgs.bat
-    pkgs.jq
-    pkgs.btop
-    pkgs.fastfetch
+    zip
+    unzip
+    ripgrep
+    bat
+    jq
+    btop
+    fastfetch
 
     # GNOME Apps & Tools
-    pkgs.gnomeExtensions.blur-my-shell
-    pkgs.dconf-editor
+    gnomeExtensions.blur-my-shell
+    gnomeExtensions.clipboard-indicator
+    dconf-editor
 
   ];
 
@@ -172,7 +173,10 @@
     "org/gnome/shell" = {
 
       disable-user-extensions = false;
-      enabled-extensions = [ "blur-my-shell@aunetx" ];
+      enabled-extensions = [
+        "blur-my-shell@aunetx"
+        "clipboard-indicator@tudmotu.com"
+      ];
       favorite-apps = [
         "firefox.desktop"
         "kitty.desktop"
