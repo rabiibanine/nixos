@@ -8,6 +8,7 @@
       black
       clang-tools
       google-java-format
+      typstyle
     ];
 
     enable = true;
@@ -111,6 +112,9 @@
 
           # Java
           jdtls.enable = true;
+
+          # Typst
+          tinymist.enable = true;
         };
 
         keymaps = {
@@ -168,6 +172,7 @@
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
             java = [ "google-java-format" ];
+            typst = [ "typstyle" ];
           };
 
           format_on_save = {
