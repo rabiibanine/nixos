@@ -55,34 +55,53 @@
     };
   };
 
-  programs.neovim = {
+  programs.nixvim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    plugins = with pkgs.vimPlugins; [
-      gruvbox-nvim
+
+    # Theme
+    colorschemes.gruvbox.enable = true;
+
+    # Global variables (vim.g)
+    globals = {
+      mapleader = " ";
+    };
+
+    # Standard options (vim.opt / vim.o)
+    opts = {
+      number = true;
+      relativenumber = true;
+      shiftwidth = 2;
+      expandtab = true;
+      background = "dark";
+    };
+
+    # Keybindings (vim.keymap.set)
+    keymaps = [
+      {
+        mode = "i";
+        key = "jk";
+        action = "<ESC>";
+      }
+      {
+        mode = "i";
+        key = "kj";
+        action = "<ESC>";
+      }
+      {
+        mode = "n";
+        key = "<leader>w";
+        action = ":w<CR>";
+      }
+      {
+        mode = "n";
+        key = "<leader>q";
+        action = ":q<CR>";
+      }
     ];
-
-    extraLuaConfig = ''
-      vim.g.mapleader = " "
-
-      vim.keymap.set('i', 'jk', '<ESC>')
-      vim.keymap.set('i', 'kj', '<ESC>')
-
-      vim.keymap.set('n', '<leader>w', ':w<CR>')
-      vim.keymap.set('n', '<leader>q', ':q<CR>')
-
-      vim.opt.number = true;
-      vim.opt.relativenumber = true;
-      vim.opt.shiftwidth = 2;
-      vim.opt.expandtab = true;
-
-      -- Theme
-      vim.o.background = "dark"
-      vim.cmd([[colorscheme gruvbox]])
-    '';
-    };  
+  };
 
   programs.kitty = {
     enable = true;
