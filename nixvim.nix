@@ -1,13 +1,14 @@
 { config, pkgs, ... } : {
 
-  extraPackages = with pkgs; [
-    nixfmt-rfc-style
-    black
-    clang-tools
-    google-java-format
-  ];
-
   programs.nixvim = {
+
+    extraPackages = with pkgs; [
+      nixfmt-rfc-style
+      black
+      clang-tools
+      google-java-format
+    ];
+
     enable = true;
     defaultEditor = true;
     viAlias = true;
