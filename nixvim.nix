@@ -28,7 +28,7 @@
     plugins = {
 
       web-devicons.enable = true;
-      luasnip.enabe = true;
+      luasnip.enable = true;
 
       lualine = {
         enable = true;
