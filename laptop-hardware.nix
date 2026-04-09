@@ -4,9 +4,11 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [
+      (modulesPath + "/installer/scan/not-detected.nix")
+    ] ++ lib.optional (builtins.pathExists /home/pizzkat/.config/nixos/local-packages/laptop-local-packages.nix) 
+       /home/pizzakat/.config/nixos/local-packages/laptop-local-packages.nix;
+
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" ];
   boot.initrd.kernelModules = [ ];
