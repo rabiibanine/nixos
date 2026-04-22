@@ -4,7 +4,7 @@
   programs.nixvim = {
 
     extraPackages = with pkgs; [
-      nixfmt-rfc-style
+      nixfmt
       black
       clang-tools
       google-java-format
