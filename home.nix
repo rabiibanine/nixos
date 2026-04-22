@@ -134,6 +134,7 @@
     "edit-home" = "nvim ~/.config/nixos/home.nix";
     "edit-config" = "nvim ~/.config/nixos/configuration.nix";
     "get-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock";
+    "copy-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock | wl-copy";
 
     # --- MODERN CLI SWAPS ---
 
