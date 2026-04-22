@@ -133,8 +133,7 @@
     program = "cd ~/Programming/";
     "edit-home" = "nvim ~/.config/nixos/home.nix";
     "edit-config" = "nvim ~/.config/nixos/configuration.nix";
-    "init-dev" =
-      "nix flake init -t github:rabiibanine/nix-universal-template#universal && direnv allow";
+    "get-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock";
 
     # --- MODERN CLI SWAPS ---
 
