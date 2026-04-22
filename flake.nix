@@ -37,9 +37,9 @@
       sharedModules = [
 	  ./configuration.nix
 	  ./nixvim.nix
-	  nixvim.nixosModules.nixvim
 	  home-manager.nixosModules.home-manager
-	  nixpkgs.nixModules.readOnlyPkgs
+	  nixvim.nixosModules.nixvim
+	  nixpkgs.nixosModules.readOnlyPkgs
 	  {
 	    nixpkgs.pkgs = pkgs;
 	    home-manager.useGlobalPkgs = true;
