@@ -38,7 +38,6 @@
     { device = "/dev/disk/by-uuid/74daba95-a8d1-4cbd-ba1a-12dacd4e3a6b"; }
   ];
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # Enable keyd remaps for laptop
