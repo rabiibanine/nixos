@@ -39,7 +39,9 @@
 	  ./nixvim.nix
 	  nixvim.nixosModules.nixvim
 	  home-manager.nixosModules.home-manager
+	  nixpkgs.nixModules.readOnlyPkgs
 	  {
+	    nixpkgs.pkgs = pkgs;
 	    home-manager.useGlobalPkgs = true;
 	    home-manager.useUserPackages = true;
 	    home-manager.users.pizzakat = import ./home.nix;
@@ -49,7 +51,7 @@
     in
     {
       nixosConfigurations."pizzahub" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs pkgs; };
+        specialArgs = { inherit inputs; };
 	modules = sharedModules ++ [ 
 	  ./laptop-hardware.nix
 	  { networking.hostName = "pizzahub"; }
@@ -57,7 +59,7 @@
       };
 
       nixosConfigurations."pizzahub-vm" = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs pkgs; };
+        specialArgs = { inherit inputs; };
 	modules = sharedModules ++ [ 
 	  ./vm-hardware.nix
 	  { networking.hostName = "pizzahub-vm"; }
