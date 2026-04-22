@@ -41,10 +41,7 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  # Enable MongoDB service.
-  services.mongodb.package = pkgs.mongodb-ce;
-  services.mongodb.enable = true;
-
+  # Enable MongoDB
   services.mongodb = {
     enable = true;
     package = pkgs.mongodb-ce;
