@@ -98,7 +98,7 @@
   home.packages = with pkgs; [
 
     # Applications | Temp disable packet tracer and jetbrains
-    # jetbrains.idea
+    jetbrains.idea
     zathura
     # pkgs.cisco-packet-tracer_9
 
