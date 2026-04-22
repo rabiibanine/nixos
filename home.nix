@@ -17,6 +17,7 @@
     initContent = ''
       new-project() {
         nix flake init -t /home/pizzakat/.config/nix-templates#$1
+      }
     '';
   };
 
