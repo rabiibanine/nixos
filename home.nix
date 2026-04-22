@@ -13,6 +13,11 @@
 
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+
+    initExtra = ''
+      new-project() {
+        nix flake init -t /home/pizzakat/.config/nix-templates#$1
+    '';
   };
 
   programs.starship = {
