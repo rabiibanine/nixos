@@ -106,7 +106,7 @@
     # Applications | Temp disable packet tracer and jetbrains
     jetbrains.idea
     zathura
-    # pkgs.cisco-packet-tracer_9
+    pkgs.cisco-packet-tracer_9
 
     # Tools
     zip
