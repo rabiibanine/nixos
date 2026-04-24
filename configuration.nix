@@ -47,6 +47,16 @@
     package = pkgs.mongodb-ce;
   };
 
+  # Enable PostgreSQL
+  config.services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "mydatabase" ];
+    authentication = pkgs.lib.mkOverride 10 ''
+      #type database  DBuser  auth-method
+      local all       all     trust
+    '';
+  };
+
   # Enable the windowing system.
   services.xserver.enable = true;
 
