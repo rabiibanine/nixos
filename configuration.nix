@@ -48,7 +48,7 @@
   };
 
   # Enable PostgreSQL
-  config.services.postgresql = {
+  services.postgresql = {
     enable = true;
     ensureDatabases = [ "mydatabase" ];
     authentication = pkgs.lib.mkOverride 10 ''
