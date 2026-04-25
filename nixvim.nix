@@ -251,6 +251,11 @@
       rest = {
         enable = true;
       };
+
+      auto-session = {
+        enable = true;
+      };
+
     };
 
   };
