@@ -139,6 +139,20 @@
 
           # Java
           jdtls.enable = true;
+          jdtls.extraOptions = {
+            settings = {
+              java = {
+                configuration = {
+                  runtimes = [
+                    {
+                      name = "JavaSE-21";
+                      path = "\${env:JAVA_HOME}";
+                    }
+                  ];
+                };
+              };
+            };
+          };
 
           # Kotlin
           kotlin-language-server.enable = true;
