@@ -10,6 +10,8 @@
       google-java-format
       typstyle
       prettier
+      kotlin-language-server
+      ktlint
     ];
 
     enable = true;
@@ -138,6 +140,9 @@
           # Java
           jdtls.enable = true;
 
+          # Kotlin
+          kotlin-language-server.enable = true;
+
           # Typst
           tinymist.enable = true;
         };
@@ -197,6 +202,7 @@
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
             java = [ "google-java-format" ];
+            kotlin = [ "ktlin" ];
             typst = [ "typstyle" ];
           };
 
