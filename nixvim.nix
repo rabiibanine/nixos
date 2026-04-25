@@ -241,6 +241,7 @@
         enable = true;
         # Highly recommended default:
         # If Neo-tree is the last window open, close Neovim instead of hanging.
+        close_if_last_window = true;
         settings = {
           filesystem.follow_current_file = {
             enabled = true;
