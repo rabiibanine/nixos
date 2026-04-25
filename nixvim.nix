@@ -209,7 +209,7 @@
           format_on_save = {
             # If a specific formatter isn't found, use the LSP's basic formatter
             lsp_fallback = true;
-            timeout_ms = 500;
+            timeout_ms = 2000;
           };
         };
       };
