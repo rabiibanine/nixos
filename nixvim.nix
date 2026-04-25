@@ -138,20 +138,7 @@
           clangd.enable = true;
 
           # Java
-          jdtls = {
-            enable = true;
-            extraOptions = {
-              settings = {
-                java = {
-                  import = {
-                    gradle = {
-                      enabled = true;
-                    };
-                  };
-                };
-              };
-            };
-          };
+          jdtls.enable = true;
 
           # Kotlin
           kotlin-language-server.enable = true;
