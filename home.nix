@@ -114,10 +114,10 @@
     ripgrep
     bat
     jq
+    fd
     btop
     fastfetch
     wl-clipboard
-    tree-sitter
 
     # GNOME Apps & Tools
     gnomeExtensions.blur-my-shell
