@@ -242,9 +242,9 @@
         # Highly recommended default:
         # If Neo-tree is the last window open, close Neovim instead of hanging.
         settings = {
-          filesystem = {
+          filesystem.follow_current_file = {
             enabled = true;
-            leaveDirsOpen = true;
+            leave_dirs_open = true;
           };
         };
       };
