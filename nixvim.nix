@@ -10,7 +10,7 @@
       google-java-format
       typstyle
       prettier
-      kotlin-language-server
+      kotlin_language_server
       ktlint
     ];
 
