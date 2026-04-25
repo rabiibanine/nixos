@@ -259,7 +259,4 @@
     };
 
   };
-
-  # Options for auto-session
-  opts.sessionoptions = "blank,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions";
 }
