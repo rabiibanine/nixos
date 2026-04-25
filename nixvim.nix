@@ -239,34 +239,19 @@
 
       neo-tree = {
         enable = true;
-
         # Highly recommended default:
         # If Neo-tree is the last window open, close Neovim instead of hanging.
         settings = {
           close_if_last_window = true;
-        };
-        extraOptions = {
           filesystem = {
-            persist_file_system_state = true;
+            enabled = true;
+            leave_dirs_open = true;
           };
         };
-
       };
 
       rest = {
         enable = true;
-      };
-
-      auto-session = {
-        enable = false;
-        settings = {
-          suppressed_dirs = [
-            "~/"
-            "~/Downloads"
-          ];
-          pre_save_cmds = [ "Neotree close" ];
-          post_restore_cmds = [ "Neotree show" ];
-        };
       };
 
     };
