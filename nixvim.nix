@@ -146,7 +146,7 @@
                   runtimes = [
                     {
                       name = "JavaSE-21";
-                      path = "\${env:JAVA_HOME}";
+                      path = "/nix/store/4sc7bszs7fkhlvi07x7ywfq3nhsa0w31-openjdk-21.0.10+7/lib/openjdk";
                     }
                   ];
                 };
