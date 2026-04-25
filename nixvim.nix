@@ -245,6 +245,11 @@
         settings = {
           close_if_last_window = true;
         };
+        extraOptions = {
+          filesystem = {
+            persist_file_system_state = true;
+          };
+        };
 
       };
 
@@ -253,7 +258,7 @@
       };
 
       auto-session = {
-        enable = true;
+        enable = false;
         settings = {
           suppressed_dirs = [
             "~/"
