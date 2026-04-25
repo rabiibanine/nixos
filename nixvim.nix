@@ -202,7 +202,7 @@
             c = [ "clang-format" ];
             cpp = [ "clang-format" ];
             java = [ "google-java-format" ];
-            kotlin = [ "ktlin" ];
+            kotlin = [ "ktlint" ];
             typst = [ "typstyle" ];
           };
 
