@@ -52,37 +52,40 @@
     };
   };
 
-  programs.firefox = {
-    enable = true;
+  # Just in case
+  /*
+    programs.firefox = {
+      enable = true;
 
-    profiles.pizzakat = {
+      profiles.pizzakat = {
 
-      id = 0;
-      name = "pizzakat";
-      isDefault = true;
+        id = 0;
+        name = "pizzakat";
+        isDefault = true;
 
-      settings = {
-        "browser.aboutwelcome.enabled" = false;
-        "browser.startup.homepage_override.mstone" = "ignore";
+        settings = {
+          "browser.aboutwelcome.enabled" = false;
+          "browser.startup.homepage_override.mstone" = "ignore";
 
-        "sidebar.revamp" = true;
-        "sidebar.verticalTabs" = true;
-        "sidebar.visibility" = "always-show";
+          "sidebar.revamp" = true;
+          "sidebar.verticalTabs" = true;
+          "sidebar.visibility" = "always-show";
+        };
+
       };
 
-    };
+      policies = {
 
-    policies = {
+        ExtensionSettings = {
 
-      ExtensionSettings = {
-
-        "uBlock0@raymondhill.net" = {
-          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-          installation_mode = "force_installed";
+          "uBlock0@raymondhill.net" = {
+            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+            installation_mode = "force_installed";
+          };
         };
       };
     };
-  };
+  */
 
   programs.kitty = {
     enable = true;
