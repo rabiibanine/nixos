@@ -58,17 +58,54 @@
 
   programs.zen-browser = {
     enable = true;
+    setAsDefaultBrowser = true;
 
-    # Your two dedicated spaces
-    spaces = {
-      exploration = {
-        name = "Exploration";
-        force = true;
+    policies = {
+      DisableAppUpdate = true;
+      DisableTelemetry = true;
+      DisablePocket = true;
+    };
+
+    profiles.default = {
+      settings = {
+        "zen.workspaces.continue-where-left-off" = true;
+        "zen.view.compact.hide-tabbar" = true;
+        "zen.urlbar.behavior" = "float";
       };
-      development = {
-        name = "Development";
-        force = true;
+
+      containersForce = true; # Delete containers not declared here
+      containers = {
+        Work = {
+          color = "blue";
+          icon = "briefcase";
+          id = 1;
+        };
       };
+
+      spacesForce = true; # Delete spaces not declared here
+      spaces = {
+        "Exploration" = {
+          id = "c6de089c-410d-4206-961d-ab11f988d40a";
+          position = 1000;
+          icon = "🏠";
+        };
+        "Development" = {
+          id = "cdd10fab-4fc5-494b-9041-325e5759195b";
+          position = 2000;
+          icon = "💼";
+          container = 1;
+        };
+      };
+
+      pinsForce = true; # Delete pins not declared here
+      pins = {
+        "GitHub" = {
+          id = "48e8a119-5a14-4826-9545-91c8e8dd3bf6";
+          url = "https://github.com";
+          position = 101;
+        };
+      };
+
     };
   };
 
