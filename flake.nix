@@ -20,7 +20,6 @@
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
-      # You can also append '/beta' to the url if you want bleeding-edge updates
 
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";

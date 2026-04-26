@@ -77,7 +77,7 @@
       { url = "https://mail.google.com"; }
       { url = "https://translate.google.com"; }
       { url = "https://github.com"; }
-      { url = "https://desmos.com"; }
+      { url = "https://desmos.com/calculator"; }
       { url = "https://youtube.com"; }
     ];
   };
