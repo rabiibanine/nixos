@@ -18,6 +18,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      # You can also append '/beta' to the url if you want bleeding-edge updates
+
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
+    };
+
   };
 
   outputs =
@@ -35,34 +43,34 @@
         config.allowUnfree = true;
       };
       sharedModules = [
-	  ./configuration.nix
-	  ./nixvim.nix
-	  home-manager.nixosModules.home-manager
-	  nixvim.nixosModules.nixvim
-	  nixpkgs.nixosModules.readOnlyPkgs
-	  {
-	    nixpkgs.pkgs = pkgs;
-	    home-manager.useGlobalPkgs = true;
-	    home-manager.useUserPackages = true;
-	    home-manager.users.pizzakat = import ./home.nix;
-	    home-manager.extraSpecialArgs = { inherit inputs pkgs; };
-	  }
+        ./configuration.nix
+        ./nixvim.nix
+        home-manager.nixosModules.home-manager
+        nixvim.nixosModules.nixvim
+        nixpkgs.nixosModules.readOnlyPkgs
+        {
+          nixpkgs.pkgs = pkgs;
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.users.pizzakat = import ./home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs pkgs; };
+        }
       ];
     in
     {
       nixosConfigurations."pizzahub" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-	modules = sharedModules ++ [ 
-	  ./laptop-hardware.nix
-	  { networking.hostName = "pizzahub"; }
+        modules = sharedModules ++ [
+          ./laptop-hardware.nix
+          { networking.hostName = "pizzahub"; }
         ];
       };
 
       nixosConfigurations."pizzahub-vm" = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-	modules = sharedModules ++ [ 
-	  ./vm-hardware.nix
-	  { networking.hostName = "pizzahub-vm"; }
+        modules = sharedModules ++ [
+          ./vm-hardware.nix
+          { networking.hostName = "pizzahub-vm"; }
         ];
       };
     };

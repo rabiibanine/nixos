@@ -1,5 +1,9 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
+
+  imports = [
+    inputs.zen-browser.homeModules.twilight
+  ];
 
   home.username = "pizzakat";
   home.homeDirectory = "/home/pizzakat";
@@ -50,6 +54,32 @@
       "editor.fontFamily" = "'JetBrainsMono Nerd Font', monospace";
       "editor.fontLigatures" = true;
     };
+  };
+
+  programs.zen-browser = {
+    enable = true;
+
+    # Your two dedicated spaces
+    spaces = {
+      exploration = {
+        name = "Exploration";
+        force = true;
+      };
+      development = {
+        name = "Development";
+        force = true;
+      };
+    };
+
+    # Global Essentials (These bypass workspaces and stay in the sidebar)
+    essentials = [
+      { url = "https://gemini.google.com"; }
+      { url = "https://mail.google.com"; }
+      { url = "https://translate.google.com"; }
+      { url = "https://github.com"; }
+      { url = "https://desmos.com"; }
+      { url = "https://youtube.com"; }
+    ];
   };
 
   # Just in case
