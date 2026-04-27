@@ -10,7 +10,8 @@
 }:
 
 {
-  imports = [];
+  imports = [(modulesPath + "/installer/scan/not-detected.nix")
+];
 
   boot.initrd.availableKernelModules = [
     "nvme"
@@ -19,24 +20,20 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/144036eb-53fb-47b9-b5c7-cee1bbe94ccd";
+      fsType = "ext4";
+    };
 
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/4022f689-17d4-4839-9c09-cd0d3ec36fc2";
-    fsType = "ext4";
-  };
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/33BD-B425";
+      fsType = "vfat";
+      options = [ "fmask=0077" "dmask=0077" ];
+    };
 
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/5EB6-1115";
-    fsType = "vfat";
-    options = [
-      "fmask=0077"
-      "dmask=0077"
-    ];
-  };
-
-  swapDevices = [
-    { device = "/dev/disk/by-uuid/74daba95-a8d1-4cbd-ba1a-12dacd4e3a6b"; }
-  ];
+  swapDevices =
+    [ { device = "/dev/disk/by-uuid/67135067-073b-4139-aa19-cb9875046679"; }
+ ];
 
   hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
