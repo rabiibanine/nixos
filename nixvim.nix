@@ -138,7 +138,24 @@
           clangd.enable = true;
 
           # Java
-          jdtls.enable = true;
+          jdtls = {
+            enable = true;
+            extraOptions = {
+              settings = {
+                java = {
+                  configuration = {
+                    runtimes = [
+                      {
+                        name = "JavaSE-21";
+                        path.__raw = "vim.fn.getenv('JAVA_HOME')";
+                      }
+                    ];
+                  };
+                };
+              };
+
+            };
+          };
 
           # Kotlin
           kotlin-language-server.enable = true;
