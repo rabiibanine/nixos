@@ -245,7 +245,6 @@
       favorite-apps = [
         "zen.desktop"
         "kitty.desktop"
-        "idea.desktop"
         "org.pwmt.zathura.desktop"
       ];
 
