@@ -243,7 +243,7 @@
         "clipboard-indicator@tudmotu.com"
       ];
       favorite-apps = [
-        "firefox.desktop"
+        "zen.desktop"
         "kitty.desktop"
         "idea.desktop"
         "org.pwmt.zathura.desktop"
