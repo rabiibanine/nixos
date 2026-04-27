@@ -87,6 +87,10 @@
       web-devicons.enable = true;
       luasnip.enable = true;
 
+      nvim-jdtls = {
+        enable = true;
+      };
+
       lualine = {
         enable = true;
         settings = {
@@ -138,24 +142,26 @@
           clangd.enable = true;
 
           # Java
-          jdtls = {
-            enable = true;
-            extraOptions = {
-              settings = {
-                java = {
-                  configuration = {
-                    runtimes = [
-                      {
-                        name = "JavaSE-21";
-                        path.__raw = "vim.fn.getenv('JAVA_HOME')";
-                      }
-                    ];
+          /*
+            jdtls = {
+              enable = false;
+              extraOptions = {
+                settings = {
+                  java = {
+                    configuration = {
+                      runtimes = [
+                        {
+                          name = "JavaSE-21";
+                          path.__raw = "vim.fn.getenv('JAVA_HOME')";
+                        }
+                      ];
+                    };
                   };
                 };
-              };
 
+              };
             };
-          };
+          */
 
           # Kotlin
           kotlin-language-server.enable = true;
