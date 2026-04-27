@@ -87,6 +87,10 @@
       web-devicons.enable = true;
       luasnip.enable = true;
 
+      java = {
+        enable = true;
+      };
+
       jdtls = {
         enable = true;
       };
