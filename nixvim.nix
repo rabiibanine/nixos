@@ -87,10 +87,6 @@
       web-devicons.enable = true;
       luasnip.enable = true;
 
-      java = {
-        enable = true;
-      };
-
       lualine = {
         enable = true;
         settings = {
