@@ -91,10 +91,6 @@
         enable = true;
       };
 
-      jdtls = {
-        enable = true;
-      };
-
       lualine = {
         enable = true;
         settings = {
