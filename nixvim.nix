@@ -91,6 +91,18 @@
         enable = true;
         settings = {
           cmd = [ "${pkgs.jdt-language-server}/bin/jdtls" ];
+          settings = {
+            java = {
+              configuration = {
+                runtimes = [
+                  {
+                    name = "JavaSE-21";
+                    path.__raw = "vim.fn.getenv('JAVA_HOME')";
+                  }
+                ];
+              };
+            };
+          };
         };
       };
 
