@@ -87,7 +87,7 @@
       web-devicons.enable = true;
       luasnip.enable = true;
 
-      nvim-jdtls = {
+      jdtls = {
         enable = true;
       };
 
