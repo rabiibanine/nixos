@@ -86,6 +86,7 @@
 
       web-devicons.enable = true;
       luasnip.enable = true;
+      jdtls.enable = true;
 
       lualine = {
         enable = true;
