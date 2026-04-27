@@ -86,7 +86,13 @@
 
       web-devicons.enable = true;
       luasnip.enable = true;
-      jdtls.enable = true;
+
+      jdtls = {
+        enable = true;
+        settings = {
+          cmd = [ "${pkgs.jdt-language-server}/bin/jdtls" ];
+        };
+      };
 
       lualine = {
         enable = true;
