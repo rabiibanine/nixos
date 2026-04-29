@@ -163,8 +163,9 @@
 
   home.packages = with pkgs; [
 
-    # Applications | Temp disable packet tracer and jetbrains
+    # Applications
     zathura
+    packettracer9
 
     # Tools
     zip
