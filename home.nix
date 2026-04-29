@@ -165,7 +165,7 @@
 
     # Applications
     zathura
-    packettracer9
+    cisco-packet-tracer_9
 
     # Tools
     zip
