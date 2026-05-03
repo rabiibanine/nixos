@@ -234,6 +234,7 @@
             css = [ "prettier" ];
             html = [ "prettier" ];
             json = [ "prettier" ];
+            jsonc = [ "prettier" ];
 
             nix = [ "nixfmt" ];
             python = [ "black" ];
