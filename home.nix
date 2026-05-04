@@ -119,6 +119,7 @@
     btop
     fastfetch
     wl-clipboard
+    opencode
 
     # GNOME Apps & Tools
     gnomeExtensions.blur-my-shell
