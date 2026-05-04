@@ -34,7 +34,22 @@
       background = "dark";
       termguicolors = true;
       scrolloff = 8;
+      autoRead = true;
     };
+
+    autoCmd = [
+      {
+        event = [
+          "FocusGained"
+          "BufEnter"
+          "CursorHold"
+          "CursorHoldI"
+        ];
+        pattern = "*";
+        command = "if mode() != 'c' | checktime | lua require('neo-tree.sources.manager').refresh('filesystem') | endif";
+        desc = "Refresh buffers and Neo-tree";
+      }
+    ];
 
     keymaps = [
       {
