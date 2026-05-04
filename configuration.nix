@@ -10,6 +10,14 @@
 }:
 
 {
+  # Swap
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4096; # Size in megabytes (this allocates 4GB)
+    }
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
