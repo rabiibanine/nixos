@@ -1,9 +1,7 @@
 { inputs, pkgs, ... }:
 {
 
-  imports = [
-    inputs.zen-browser.homeModules.twilight
-  ];
+  imports = [ ];
 
   home.username = "pizzakat";
   home.homeDirectory = "/home/pizzakat";
@@ -56,93 +54,37 @@
     };
   };
 
-  programs.zen-browser = {
+  programs.firefox = {
     enable = true;
-    setAsDefaultBrowser = true;
+
+    profiles.pizzakat = {
+
+      id = 0;
+      name = "pizzakat";
+      isDefault = true;
+
+      settings = {
+        "browser.aboutwelcome.enabled" = false;
+        "browser.startup.homepage_override.mstone" = "ignore";
+
+        "sidebar.revamp" = true;
+        "sidebar.verticalTabs" = true;
+        "sidebar.visibility" = "always-show";
+      };
+
+    };
 
     policies = {
-      DisableAppUpdate = true;
-      DisableTelemetry = true;
-      DisablePocket = true;
-    };
 
-    profiles.default = {
-      settings = {
-        "zen.workspaces.continue-where-left-off" = true;
-        "zen.view.compact.hide-tabbar" = true;
-        "zen.urlbar.behavior" = "float";
-      };
+      ExtensionSettings = {
 
-      containersForce = true; # Delete containers not declared here
-      containers = {
-        Work = {
-          color = "blue";
-          icon = "briefcase";
-          id = 1;
+        "uBlock0@raymondhill.net" = {
+          install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+          installation_mode = "force_installed";
         };
       };
-
-      spacesForce = true; # Delete spaces not declared here
-      spaces = {
-        "Exploration" = {
-          id = "c6de089c-410d-4206-961d-ab11f988d40a";
-          position = 1000;
-          icon = "🏠";
-        };
-        "Development" = {
-          id = "cdd10fab-4fc5-494b-9041-325e5759195b";
-          position = 2000;
-          icon = "💼";
-          container = 1;
-        };
-      };
-
-      pinsForce = true; # Delete pins not declared here
-      pins = {
-        "GitHub" = {
-          id = "48e8a119-5a14-4826-9545-91c8e8dd3bf6";
-          url = "https://github.com";
-          position = 101;
-        };
-      };
-
     };
   };
-
-  # Just in case
-  /*
-    programs.firefox = {
-      enable = true;
-
-      profiles.pizzakat = {
-
-        id = 0;
-        name = "pizzakat";
-        isDefault = true;
-
-        settings = {
-          "browser.aboutwelcome.enabled" = false;
-          "browser.startup.homepage_override.mstone" = "ignore";
-
-          "sidebar.revamp" = true;
-          "sidebar.verticalTabs" = true;
-          "sidebar.visibility" = "always-show";
-        };
-
-      };
-
-      policies = {
-
-        ExtensionSettings = {
-
-          "uBlock0@raymondhill.net" = {
-            install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
-            installation_mode = "force_installed";
-          };
-        };
-      };
-    };
-  */
 
   programs.kitty = {
     enable = true;
@@ -244,7 +186,7 @@
         "clipboard-indicator@tudmotu.com"
       ];
       favorite-apps = [
-        "zen.desktop"
+        "firefox.desktop"
         "kitty.desktop"
         "org.pwmt.zathura.desktop"
       ];
