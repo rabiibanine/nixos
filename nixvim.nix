@@ -10,7 +10,6 @@
       google-java-format
       typstyle
       prettier
-      kotlin-language-server
       ktlint
     ];
 
@@ -30,7 +29,11 @@
       relativenumber = true;
       shiftwidth = 2;
       expandtab = true;
+      tabstop = 2;
+      softtabstop = 2;
       background = "dark";
+      termguicolors = true;
+      scrolloff = 8;
     };
 
     keymaps = [
@@ -121,6 +124,7 @@
           "<leader>ff" = "find_files";
           "<leader>fg" = "live_grep";
           "<leader>fb" = "buffers";
+          "<leader>fd" = "diagnostics";
         };
         extensions = {
           ui-select.enable = true;
@@ -155,28 +159,6 @@
 
           # C/C++
           clangd.enable = true;
-
-          # Java
-          /*
-            jdtls = {
-              enable = false;
-              extraOptions = {
-                settings = {
-                  java = {
-                    configuration = {
-                      runtimes = [
-                        {
-                          name = "JavaSE-21";
-                          path.__raw = "vim.fn.getenv('JAVA_HOME')";
-                        }
-                      ];
-                    };
-                  };
-                };
-
-              };
-            };
-          */
 
           # Kotlin
           kotlin-language-server.enable = true;
