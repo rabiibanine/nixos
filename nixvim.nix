@@ -44,7 +44,7 @@
           "BufEnter"
         ];
         pattern = "*";
-        command = "if mode() != 'c' | checktime | lua require('neo-tree.sources.manager').refresh('filesystem') | endif";
+        command = "if mode() != 'c' | checktime | execute \"lua require('neo-tree.sources.manager').refresh('filesystem')\" | endif";
         desc = "Refresh buffers and Neo-tree";
       }
     ];
