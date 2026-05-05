@@ -246,6 +246,7 @@
             html = [ "prettier" ];
             json = [ "prettier" ];
             jsonc = [ "prettier" ];
+            typescriptreact = [ "prettier" ];
 
             nix = [ "nixfmt" ];
             python = [ "black" ];
