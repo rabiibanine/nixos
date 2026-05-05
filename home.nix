@@ -203,6 +203,10 @@
 
     };
 
+    "org/gnome/mutter/wayland" = {
+      xwayland-disable-extension = [ "Xtest" ];
+    };
+
   };
 
 }
