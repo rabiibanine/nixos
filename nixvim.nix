@@ -166,6 +166,7 @@
           # Web
           html.enable = true;
           cssls.enable = true;
+          eslint.enable = true;
 
           # Python
           pyright.enable = true;
@@ -224,8 +225,23 @@
         enable = true;
         settings = {
           formatters_by_ft = {
-            javascript = [ "prettier" ];
-            typescript = [ "prettier" ];
+            javascript = [
+              "eslint_d"
+              "prettier"
+            ];
+            typescript = [
+              "eslint_d"
+              "prettier"
+            ];
+            javascriptreact = [
+              "eslint_d"
+              "prettier"
+            ];
+            typescriptreact = [
+              "eslint_d"
+              "prettier"
+            ];
+
             css = [ "prettier" ];
             html = [ "prettier" ];
             json = [ "prettier" ];
