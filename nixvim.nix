@@ -166,7 +166,7 @@
           # Web
           html.enable = true;
           cssls.enable = true;
-          eslint.enable = true;
+          eslint.enable = false; # TODO Remember to enable this
 
           # Python
           pyright.enable = true;
@@ -225,20 +225,17 @@
         enable = true;
         settings = {
           formatters_by_ft = {
+            # TODO Re add eslint_d to all of these
             javascript = [
-              "eslint_d"
               "prettier"
             ];
             typescript = [
-              "eslint_d"
               "prettier"
             ];
             javascriptreact = [
-              "eslint_d"
               "prettier"
             ];
             typescriptreact = [
-              "eslint_d"
               "prettier"
             ];
 
