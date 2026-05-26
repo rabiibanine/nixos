@@ -55,6 +55,10 @@
     package = pkgs.mongodb-ce;
   };
 
+  services.mysql = {
+    enable = true;
+  };
+
   # Enable PostgreSQL
   services.postgresql = {
     enable = true;
