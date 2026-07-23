@@ -128,29 +128,29 @@
   ];
 
   home.shellAliases = {
-    # --- THE SYSTEM REBUILD ALIAS ---
-
-    switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
-
     # --- SYSTEM MAINTENANCE ---
 
-    cleanup = "sudo nix-collect-garbage -d";
     update = "nix flake update ~/.config/nixos/";
+    switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
+    "full-switch" = "update && switch && sync-templates";
+
+    storage = "df df -h / && du -sh /nix/store";
+    cleanup = "sudo nix-collect-garbage -d";
+    "check-cleanup" = "nix-collect-garbage --dry-run";
+
     conf = "cd ~/.config/nixos/";
     home = "cd ~";
     program = "cd ~/Programming/";
+
     "edit-home" = "nvim ~/.config/nixos/home.nix";
     "edit-config" = "nvim ~/.config/nixos/configuration.nix";
+
     "get-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock";
     "copy-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock | wl-copy";
 
-    # --- MODERN CLI SWAPS ---
+    "sync-templates" =
+      "grep -rlE 'github:nixos/nixpkgs/[0-9a-f]{40}' ~/Programming/nix-templates | xargs -r sed -i -E \"s|github:nixos/nixpkgs/[0-9a-f]{40}|github:nixos/nixpkgs/$(get-rev)|g\"";
 
-    # --- FILE NAVIGATION ALIASES ---
-
-    ".." = "cd ..";
-    "..." = "cd ../..";
-    ll = "ls -la";
   };
 
   home.file.".ideavimrc".text = ''
