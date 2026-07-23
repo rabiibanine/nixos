@@ -130,7 +130,7 @@
   home.shellAliases = {
     # --- SYSTEM MAINTENANCE ---
 
-    update = "nix flake update --flake ~/.config/nixos/";
+    update = "sudo nix flake update --flake ~/.config/nixos/";
     switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
     "full-update" = "update && switch && sync-templates";
 
