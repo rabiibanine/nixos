@@ -132,7 +132,7 @@
 
     update = "nix flake update ~/.config/nixos/";
     switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
-    "full-switch" = "update && switch && sync-templates";
+    "full-update" = "update && switch && sync-templates";
 
     storage = "df df -h / && du -sh /nix/store";
     cleanup = "sudo nix-collect-garbage -d";
@@ -149,7 +149,7 @@
     "copy-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock | wl-copy";
 
     "sync-templates" =
-      "grep -rlE 'github:nixos/nixpkgs/[0-9a-f]{40}' ~/Programming/nix-templates | xargs -r sed -i -E \"s|github:nixos/nixpkgs/[0-9a-f]{40}|github:nixos/nixpkgs/$(get-rev)|g\"";
+      "grep -rlE 'github:nixos/nixpkgs/[0-9a-f]{40}' ~/.config/nix-templates | xargs -r sed -i -E \"s|github:nixos/nixpkgs/[0-9a-f]{40}|github:nixos/nixpkgs/$(get-rev)|g\"";
 
   };
 
