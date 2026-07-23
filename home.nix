@@ -107,7 +107,6 @@
 
     # Applications
     zathura
-    cisco-packet-tracer_9
 
     # Tools
     zip
