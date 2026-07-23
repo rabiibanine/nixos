@@ -134,16 +134,13 @@
     switch = "sudo nixos-rebuild switch --flake ~/.config/nixos/";
     "full-update" = "update && switch && sync-templates";
 
-    storage = "df -h / && du -sh /nix/store";
+    storage = "df -h";
     cleanup = "sudo nix-collect-garbage -d";
     "check-cleanup" = "nix-collect-garbage --dry-run";
 
-    conf = "cd ~/.config/nixos/";
+    conf = "cd ~/.config/nixos/ && nvim .";
     home = "cd ~";
     program = "cd ~/Programming/";
-
-    "edit-home" = "cd ~/.config/nixos/ && nvim ~/.config/nixos/home.nix";
-    "edit-config" = "cd ~/.config/nixos/ && nvim ~/.config/nixos/configuration.nix";
 
     "get-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock";
     "copy-rev" = "jq -r '.nodes.nixpkgs.locked.rev' /home/pizzakat/.config/nixos/flake.lock | wl-copy";
